@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ERPandERP</title>
+
+<link rel="stylesheet" href="jquery.mobile-1.1.1.css" />
+<link rel="stylesheet" href="style.css" />
+<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="jquery.mobile-1.1.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="script.js"></script>
+
+</head>
+<body onload="DOMLoaded()" style="bottom: 0; height: auto;">
+
+	<div data-role="page" id="home" data-theme="a"
+		data-title="WAM mobile - Home"
+		style="height: 100% !important; position: relative !important;">
+
+		<div data-role="header" data-theme="a">
+			<h1>ERPandERP India Pvt Ltd</h1>
+			<a data-role="button" data-theme="a"
+				data-transition="slide" onclick="navigator.app.exitApp();"
+				>Exit</a>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			<label for="employeecode">Employee Code:</label> <input type="text"
+				name="employeecode" id="employeecode" value="E50051"
+				placeholder="Enter your employee code" data-theme="a" /> <label
+				for="password">Password:</label> <input type="password"
+				name="password" id="password" value="Daia123" placeholder="Enter password" />
+
+			<a data-role="button" data-theme="a"
+				data-transition="slide" onclick="validateCredential();"
+				id="loginButton">Login</a>
+				
+				
+		</div>
+		<!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-theme="a"
+			style="bottom: 0; position: absolute !important; top: auto !important; width: 100%; height: 43px; text-align: center; padding: 4px;">
+			<address
+				style="font-weight: normal; font-size: .6em; color: #C0C0C0;">
+				Website: www.erpanderp.com<br /> Visit us at: ERPandERP India Pvt
+				Ltd, # 5-9-22, Manasarovar Complex, Secretariat Road,
+				Hyderabad-500063, Andhra Pradesh
+			</address>
+		</div>
+		<!-- /footer -->
+	</div>
+	<!-- /page -->
+
+
+	<!-- Start of second page -->
+	<div data-role="page" id="search" data-title="WAM mobile - Home" data-theme="a"
+		style="height: 100% !important; position: relative !important;">
+
+		<div data-role="header">
+			<h1>Employee Search</h1>
+			<a href="#home" data-role="button" data-transition="slide" onclick="document.getElementById('employeecodesearchtext').value='';"
+				data-theme="a">Logout</a>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			
+			<label for="employeenamesearchtext">Employee Name</label> 
+			<input type="text"
+				name="employeenamesearchtext" id="employeenamesearchtext" value=""
+				placeholder="Enter employee name" data-theme="a" /> 
+			<a data-role="button" data-theme="a"
+				onclick="searchEmployee();"
+				id="searchButton">Search</a>			
+		</div>
+		<!-- /content -->
+
+		<div data-role="footer" data-theme="a"
+			style="bottom: 0; position: absolute !important; top: auto !important; width: 100%; height: 43px; text-align: center; padding: 4px;">
+			<address
+				style="font-weight: normal; font-size: .6em; color: #C0C0C0;">
+				Website: www.erpanderp.com<br /> Visit us at: ERPandERP India Pvt
+				Ltd, # 5-9-22, Manasarovar Complex, Secretariat Road,
+				Hyderabad-500063, Andhra Pradesh
+			</address>
+		</div>
+		<!-- /footer -->
+	</div>
+	<!-- /page -->
+
+		<!-- Start of second page -->
+	<div data-role="page" id="searchresult" data-title="WAM mobile - Employees" data-theme="a"
+		style="height: 100% !important; position: relative !important;">
+
+		<div data-role="header">
+			<h1>Employees</h1>
+			<a href="#search" data-role="button" data-transition="slide"
+				data-theme="a">Back</a>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			
+			<div style="margin-top: -10px; width: 100%; text-align: center"><label id="searchForLabel" style='font-size: .7em'></label></div>  
+			
+			<div style="margin-top: 18px;" >
+				<ul data-role="listview" id="employeeList" style="">
+				
+				</ul>				
+			</div>
+			
+		</div>
+		<!-- /content -->
+
+		<div data-role="footer" data-theme="a"
+			style="bottom: 0; position: absolute !important; top: auto !important; width: 100%; height: 43px; text-align: center; padding: 4px;">
+			<address
+				style="font-weight: normal; font-size: .6em; color: #C0C0C0;">
+				Website: www.erpanderp.com<br /> Visit us at: ERPandERP India Pvt
+				Ltd, # 5-9-22, Manasarovar Complex, Secretariat Road,
+				Hyderabad-500063, Andhra Pradesh
+			</address>
+		</div>
+		<!-- /footer -->
+	</div>
+	
+	<div data-role="page" id="empdetails" data-theme="a">
+		<div data-role="header" data-theme="a" class="ui-corner-top">
+			<h1>Employee Detail</h1>
+		</div>
+		<div data-role="content" data-theme="a" >
+			<div id="employeeinfo">
+				
+			</div>						  
+		</div>
+	</div>
+	
+	<!-- /page -->	
+</body>
+</html>
